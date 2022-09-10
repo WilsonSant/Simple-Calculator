@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html {
+  font-size: 150%;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  background-color: rgb(2, 0, 36);
+  background: linear-gradient(to left, rgb(177, 13, 13), rgb(2, 0, 36));
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0);
+}
+
+.calculator-display {
+  grid-column: 1 / -1;
+  display: flex;
+  background: black;
+  color: white;
+  padding: 0.75rem 1rem;
+  align-items: flex-end;
+  border-radius: 3%;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 50vw;
+  min-height: 10vh;
+}
+
+.calculator_keys {
+  display: grid;
+  grid-template-columns: repeat(4, 207px);
+  grid-template-rows: minmax(60px, auto) repeat(5, 60px);
+}
+
+button {
+  border-radius: 5%;
+  color: white;
+  background: black;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.equal {
+  background: rgb(197, 128, 0);
+  width: 40vw;
+}
+
+.previous-operand {
+  font-size: 1rem;
+  color: rgb(255, 255, 255, 0.75);
+}
+
+.current-operand {
+  font-size: calc(1rem * 1.2 * 1.2);
+}
