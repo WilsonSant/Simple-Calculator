@@ -1,26 +1,31 @@
 (module
 	(export "add" (func $add))
-	(func $add (param $num1 f32) (param $num2 f32) (result f32)
+	(export "sub" (func $sub))
+	(export "mul" (func $mul))
+	(export "div" (func $div))
+	
+		(func $add (param $num1 f32) (param $num2 f32) (param $operand f32) (result f32)
 		local.get $num1
 		local.get $num2
 		f32.add
+		local.set $operand
 		)
-		(export "sub" (func $sub))
-		(func $sub (param $num1 f32) (param $num2 f32) (result f32)
+		(func $sub (param $num1 f32) (param $num2 f32) (param $operand f32) (result f32)
 		local.get $num1
 		local.get $num2
 		f32.sub
+		local.set $operand
 		)
-		(export "mul" (func $mul))
-		(func $mul (param $num1 f32) (param $num2 f32) (result f32)
+		(func $mul (param $num1 f32) (param $num2 f32) (param $operand f32) (result f32)
 		local.get $num1
 		local.get $num2
 		f32.mul
+		local.set $operand
 		)
-		(export "div" (func $div))
-		(func $div (param $num1 f32) (param $num2 f32) (result f32)
+		(func $div (param $num1 f32) (param $num2 f32) (param $operand f32) (result f32)
 		local.get $num1
 		local.get $num2
 		f32.div
+		local.set $operand
 		)
 	)
