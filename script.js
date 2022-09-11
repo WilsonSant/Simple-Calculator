@@ -38,26 +38,28 @@ class Calculator {
   }
 
   compute() {
+    let computation;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
       case "+":
-        this.currentOperand = window.add(prev, current);
+        computation = window.add(prev, current);
         break;
       case "-":
-        this.currentOperand = window.sub(prev, current);
+        computation = window.sub(prev, current);
         break;
       case "÷":
-        this.currentOperand = window.div(prev, current);
+        computation = window.div(prev, current);
         break;
       default:
         if (document.getElementById("multi")) {
-          this.currentOperand = window.mul(prev, current);
+          computation = window.mul(prev, current);
         } else {
           return;
         }
     }
+    this.currentOperand = computation;
     this.operation = undefined;
     this.previousOperand = "";
   }
